@@ -71,10 +71,9 @@ try:
     plt.xlabel('Секунды')
     plt.ylabel('Напряжение')
     print('Запись в файл')
-
+    data1_str = [str(item) for item in data1]
     with open('data.txt', 'w') as f:
-        for i in data1:
-            f.write(str(i) + '\n')
+        f.write("\n".join(data1_str))
     with open('settings.txt', 'w') as f:
         f.write('Частота дискретизации ' + str(count / time_total) + 'Гц' + "\n")
         f.write('Шаг квантования = 0.0129 В')
