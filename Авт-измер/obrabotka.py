@@ -10,7 +10,7 @@ napr_array = data_array*0.0129
 
 plt.plot(time_array, napr_array, alpha = 0.5, marker = "*", label = "V(t)", markevery=10, color = "red")
 plt.minorticks_on()
-plt.xlabel(r'$x$', fontsize=16)
+
 
 print(time_array[190] - time_array[177])
 plt.xlim([0, 9])

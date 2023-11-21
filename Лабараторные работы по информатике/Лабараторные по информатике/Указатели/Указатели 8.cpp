@@ -6,7 +6,7 @@ int* get_10_ints(){
     return new int[10];
 }
 void return_10_ints_to_the_wilds(int* p){
-    delete [] p;
+    delete p;
 }
 int main()
 {

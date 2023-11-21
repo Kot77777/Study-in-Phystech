@@ -9,14 +9,19 @@ void swap_(int* a, int* b){
     delete c;
 }
 int main(){
-    int b = 47;
+    int b = 888;
     int* a = new int; //выделить память
     int* c;
     c = &b;
+    int j[9999];
+    int* q = new int[100000];
 
-    *a = 5;
+    cout << sizeof(q) << endl;
+    cout << sizeof(j) << endl;
+    cout << sizeof(c);
+    *a = 888;
     int m = 5;
-    cout << *a << endl;
+    cout << a << " " << b << endl;
     cout << m << endl;
 
     int x = 1;
