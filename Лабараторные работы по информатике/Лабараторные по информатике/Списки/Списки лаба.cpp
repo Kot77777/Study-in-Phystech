@@ -35,21 +35,21 @@ int pop_back(subforwardlist **sfl){
     if(*sfl == NULL){
         return 0;
     }
-    else{
-        subforwardlist* tmp;
-        tmp = *sfl;
-        while(tmp->next != NULL){
-            if(tmp->next->next == NULL){
-                unsigned int k = tmp->next->data;
-                tmp->next = NULL;
-                return k;
-                break;
-            }
-            tmp = tmp->next;
-        }
+    if((*sfl)->next == NULL){
+        int p = (*sfl)->data;
+        delete *sfl;
         *sfl = NULL;
-        return tmp->data;
+        return p;
     }
+    subforwardlist* tmp;
+    tmp = *sfl;
+    while(tmp->next->next != NULL){
+        tmp = tmp->next;
+    }
+    int k = tmp->next->data;
+    delete tmp->next;
+    tmp->next = NULL;
+    return k;
 }
 bool push_forward(subforwardlist **sfl, int d){
     subforwardlist* new_subforwardlist = new subforwardlist;
@@ -68,7 +68,9 @@ int pop_forward(subforwardlist **sfl){
     subforwardlist* tmp;
     tmp = *sfl;
     *sfl = tmp->next;
-    return tmp->data;
+    int l = tmp->data;
+    delete tmp;
+    return l;
     }
 }
 bool push_where(subforwardlist **sfl, unsigned int where, int d){
@@ -98,7 +100,7 @@ int erase_where(subforwardlist **sfl, unsigned int where){
             return pop_forward(sfl);
         }
         else{
-        int counter = 0;
+        unsigned int counter = 0;
         subforwardlist* tmp;
         tmp = *sfl;
         while(counter!=(where-1)){
@@ -106,7 +108,9 @@ int erase_where(subforwardlist **sfl, unsigned int where){
             counter++;
         }
         unsigned int k = tmp->next->data;
+        subforwardlist* tmp1 = tmp->next;
         tmp->next = tmp->next->next;
+        delete tmp1;
         return k;}
     }
 }
@@ -124,7 +128,9 @@ unsigned int size(subforwardlist  **sfl){
     return counter;
 }
 void clear(subforwardlist  **sfl){
-    *sfl = NULL;
+    while(*sfl!=NULL){
+        int k = pop_back(sfl);
+    }
 }
 #include <random>
 #include <chrono>

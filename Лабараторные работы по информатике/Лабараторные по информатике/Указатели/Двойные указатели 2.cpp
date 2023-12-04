@@ -22,7 +22,6 @@ int main()
             cin >> matrix[i][j];
         }
     }
-    int** t = transpose(matrix, N, M);
     for(unsigned int i = 0; i < N; i++) {
         for(unsigned int j = 0; j < M; j++) {
             cout << matrix[i][j] << " ";
@@ -30,17 +29,7 @@ int main()
         cout << endl;
     }
 
-    for(unsigned int i = 0; i < M; i++) {
-        for(unsigned int j = 0; j < N; j++) {
-            cout << t[i][j] << " ";
-        }
-        cout << endl;
-    }
 
-    for(unsigned int i = 0; i < M; i++) {
-        delete[] t[i];
-    }
-    delete[] t;
     for(unsigned int i = 0; i < N; i++) {
         delete[] matrix[i];
     }
