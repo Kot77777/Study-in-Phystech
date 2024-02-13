@@ -2,16 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 #plt.gca().set_aspect('equal')
 
-k = np.linspace(-np.pi, np.pi, 1000)
-x = np.cos(k)/0.81
-y = np.sin(k)/0.25
+k = np.linspace(-100, 100, 100000)
+x = (2*k**2 - k)/((k-1)**2)
+y = (k**3)/((k-1)**2)
 
 fig, ax = plt.subplots()
 ax.scatter(x,y)
-
-ax.set_xbound(-5,5)
-ax.set_ybound(-5,5)
-ax.set_box_aspect(1)
 
 #plt.plot(x, y)
 plt.show()

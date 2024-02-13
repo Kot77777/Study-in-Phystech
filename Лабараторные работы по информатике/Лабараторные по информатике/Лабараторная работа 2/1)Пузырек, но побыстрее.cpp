@@ -26,7 +26,6 @@ int main()
                     masiv[i] = k;
                 }
             }
-            cout << 5;
         }
         auto en = std::chrono::high_resolution_clock::now();
         auto nsec = en - start;
