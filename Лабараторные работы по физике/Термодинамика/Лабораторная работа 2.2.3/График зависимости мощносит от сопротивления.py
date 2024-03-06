@@ -15,6 +15,9 @@ fig1, ax = plt.subplots()
 t1 = np.polyfit(Q1, R_n1, 1)
 f1 = np.poly1d(t1)
 
+print("t1 = ", t1)
+print("f1 = ", f1)
+
 plt.scatter(Q1, R_n1, c="r", zorder = 1)
 plt.plot(Q1, f1(Q1), label = 'T1 = 23℃',
          linestyle='-', alpha = 1,
@@ -201,7 +204,7 @@ major_ticks = np.arange(0, 0.1, 0.01)
 plt.xticks(major_ticks)
 plt.xlabel('Q, Вт', fontsize=10)
 plt.ylabel('R_н, Ом', fontsize=10)
-plt.savefig("График зависимости мощности от сопротивления", dpi=600)
 plt.legend()
+plt.savefig("График зависимости мощности от сопротивления", dpi=600)
 
 plt.show()

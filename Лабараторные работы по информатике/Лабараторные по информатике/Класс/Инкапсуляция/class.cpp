@@ -4,17 +4,22 @@ using namespace std;
 
 class Human
 {
-public: // модификатор доступа
-
-	int age; // поля класса
+private:
+    int age; // поля класса
 	int weight;
-	string name; // свойства/поля класса
+	string name;
+public: // модификатор доступа
+ // свойства/поля класса
 
     void Print()
     {
         cout << "Name " << name << "\nWeight " << weight << "\nAge " << age << endl;
     }
 };
+void f(Human & k){
+        cout << k.age;
+    }
+
 
 class Point
 {
@@ -43,11 +48,8 @@ void Print()
 int main()
  {
     setlocale(LC_ALL, "ru");
-    /*Human firstHuman;
-    firstHuman.age = 30;
-    firstHuman.name = "Ivanov Ivan";
-    firstHuman.weight = 100;
-    firstHuman.Print();*/
+    Human firstHuman;
+
 
     Point a;
     a.Print();

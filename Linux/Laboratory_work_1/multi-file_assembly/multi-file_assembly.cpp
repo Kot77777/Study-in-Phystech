@@ -16,6 +16,6 @@ int main()
     Knife knife;
 
     Player player;
-    player.Shoot(&knife);
+    player.Shoot(&machingun);
     return 0;
 }
